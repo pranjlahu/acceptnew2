@@ -46,7 +46,7 @@ async def chk(_, cb : CallbackQuery):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Add To Group/Channel", url="http://t.me/{approvedbot.username}?startgroup=botstart")
+                        InlineKeyboardButton("Add To Group/Channel", url="t.me/Auto_Request_Approvel_bot?startgroup=true")
                     ]
                 ]
             )
@@ -145,7 +145,7 @@ async def approve(_, m : Message):
         add_group(m.chat.id)
         await app.approve_chat_join_request(op.id, kk.id)
         button = [[
-            InlineKeyboardButton("Add To Group/Channel", url="http://t.me/{approvedbot.username}?startgroup=botstart")
+            InlineKeyboardButton("Add To Group/Channel", url="t.me/Auto_Request_Approvel_bot?startgroup=true")
         ]]
         markup = InlineKeyboardMarkup(button)
         caption=f"**Hello {m.from_user.mention}!\nYour Request To Join {m.chat.title} Was Approved\n\n**"
