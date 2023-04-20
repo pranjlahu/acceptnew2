@@ -30,7 +30,7 @@ gif = [
 async def op(_, m :Message):
     add_user(m.from_user.id) 
     button=InlineKeyboardMarkup([[
-       InlineKeyboardButton("Add To Group/Channel", url="http://t.me/{approvedbot.username}?startgroup=botstart")
+       InlineKeyboardButton("Add To Group/Channel", url="t.me/Auto_Request_Approvel_bot?startgroup=true")
      ]])
     await m.reply_text(text="**🦊 Hello {}!\nI'm an auto approve Admin Join Requests Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=button)
     
