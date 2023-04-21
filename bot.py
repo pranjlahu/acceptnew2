@@ -49,44 +49,13 @@ async def approve(_, m : Message):
 
 @app.on_message(filters.command("start"))
 async def op(_, m :Message):
-    try:
-        await app.get_chat_member(cfg.CHID, m.from_user.id) 
-        if m.chat.type == enums.ChatType.PRIVATE:
-            keyboard = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("🗯 Channel", url="https://t.me/SDBOTs_inifinity"),
-                        InlineKeyboardButton("💬 Support", url="https://t.me/SDBOTz")
-                    ],[
-                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/SDAutoApproveBot?startgroup")
-                    ]
-                ]
-            )
-            add_user(m.from_user.id)
-            await m.reply_photo("https://telegra.ph/file/a782e3bbbe40df8a4bb67.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @SdBotz__**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
-    
-        elif m.chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
-            keyboar = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("💁‍♂️ Start me private 💁‍♂️", url="https://t.me/SDAutoApproveBot?start=start")
-                    ]
-                ]
-            )
-            add_group(m.chat.id)
-            await m.reply_text("**🦊 Hello {}!\nwrite me private for more details**".format(m.from_user.first_name), reply_markup=keyboar)
-        print(m.from_user.first_name +" Is started Your Bot!")
-
-    except UserNotParticipant:
-        key = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("🍀 Check Again 🍀", "chk")
-                ]
-            ]
-        )
-        await m.reply_text("**⚠️Access Denied!⚠️\n\nPlease Join @{} to use me.If you joined click check again button to confirm.**".format(cfg.FSUB), reply_markup=key)
-
+    add_user(m.from_user.id) 
+    button=InlineKeyboardMarkup([[
+       InlineKeyboardButton("Movie Request", url="https://t.me/+FMrG-tLWyZM3ZTFk"),
+       InlineKeyboardButton("Movie Updates", url="https://t.me/mr_link_z")
+     ]])
+    await m.reply_text(text="**🦊 Hello {}!\nI'm an auto approve Admin Join Requests Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n
+    **".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=button)
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ callback ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 @app.on_callback_query(filters.regex("chk"))
