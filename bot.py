@@ -30,9 +30,9 @@ gif = [
 async def op(_, m :Message):
     add_user(m.from_user.id) 
     button=InlineKeyboardMarkup([[
-       InlineKeyboardButton("Add To Group/Channel", url="t.me/Auto_Request_Approvel_bot?startgroup=true")
+       InlineKeyboardButton("Add To Group/Channel", url="http://t.me/{approvedbot.username}?startgroup=botstart")
      ]])
-    await m.reply_photo("https://telegra.ph/file/38f34544ea576f9ab0c1b.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
+    await m.reply_text(text="**🦊 Hello {}!\nI'm an auto approve Admin Join Requests Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=button)
     
 
 
@@ -46,12 +46,12 @@ async def chk(_, cb : CallbackQuery):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Add To Group/Channel", url="t.me/Auto_Request_Approvel_bot?startgroup=true")
+                        InlineKeyboardButton("Add To Group/Channel", url="http://t.me/{approvedbot.username}?startgroup=botstart")
                     ]
                 ]
             )
             add_user(cb.from_user.id)
-            await cb.message.edit("**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n**".format(cb.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard, disable_web_page_preview=True)
+            await cb.message.edit("**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @beta_botz__**".format(cb.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard, disable_web_page_preview=True)
         print(cb.from_user.first_name +" Is started Your Bot!")
     except UserNotParticipant:
         await cb.answer("🙅‍♂️ You are not joined to channel join and try again. 🙅‍♂️")
@@ -145,10 +145,10 @@ async def approve(_, m : Message):
         add_group(m.chat.id)
         await app.approve_chat_join_request(op.id, kk.id)
         button = [[
-            InlineKeyboardButton("Add To Group/Channel", url="t.me/Auto_Request_Approvel_bot?startgroup=true")
+            InlineKeyboardButton("Add To Group/Channel", url="http://t.me/{approvedbot.username}?startgroup=botstart")
         ]]
         markup = InlineKeyboardMarkup(button)
-        caption=f"**Hello {m.from_user.mention}!\nYour Request To Join {m.chat.title} Was Approved\n\n**"
+        caption=f"**Hello {m.from_user.mention}!\nYour Request To Join {m.chat.title} Was Approved\n\n_Powered By @MR_LINK_Z**"
         img = random.choice(gif)
         await app.send_photo(
             m.from_user.id, 
