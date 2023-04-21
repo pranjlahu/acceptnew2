@@ -41,7 +41,7 @@ async def op(_, m :Message):
     button=InlineKeyboardMarkup([[
        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/SDAutoApproveBot?startgroup")
      ]])
-    await m.reply_photo("https://telegra.ph/file/a782e3bbbe40df8a4bb67.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.\nAdd me to your chat and promote me to admin with add members permission.\n\n**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
+    await m.reply_photo("https://telegra.ph/file/a782e3bbbe40df8a4bb67.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.\nAdd me to your chat and promote me to admin with add members permission.\n\n**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=button)
     
 
 
