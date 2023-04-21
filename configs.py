@@ -11,7 +11,7 @@ class Config:
     BOT_TOKEN = getenv("BOT_TOKEN", "5974370439:AAFvTPzADhK13URFU0DS1DDTn6V8lUeqznA")
     FSUB = getenv("FSUB", "beta_botz")
     CHID = int(getenv("CHID", "-1001805259061"))
-    SUDO = [int(admin) if id_pattern.search(admin) else admin for admin in evn.get('SUDO', '1217302537').split()]
+    SUDO = [int(admin) if id_pattern.search(admin) else admin for admin in evn.get('SUDO', '1217302537').split(',')]
     MONGO_URI = getenv("MONGO_URI", "mongodb+srv://pranjalhu7253:pranjalhu@cluster0.qt8quq4.mongodb.net/?retryWrites=true&w=majority")
     
 cfg = Config()
