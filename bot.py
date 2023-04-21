@@ -141,7 +141,6 @@ async def approve(_, m : Message):
     try:
         add_group(m.chat.id)
         await app.approve_chat_join_request(op.id, kk.id)
-        markup = InlineKeyboardMarkup(button)
         caption=f"<b>**👋 HELLO {m.from_user.mention} !\nYOUR JOINING 🎟 REQUEST FOR THE <b>{m.chat.title}</b> IS APPROVED ☑️.\nTHANKS FOR JOINING**"
         add_user(kk.id)
     except errors.PeerIdInvalid as e:
