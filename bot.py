@@ -139,9 +139,6 @@ async def approve(_, m : Message):
     try:
         add_group(m.chat.id)
         await app.approve_chat_join_request(op.id, kk.id)
-        button = [[
-            InlineKeyboardButton("Add To Group/Channel", url="t.me/Auto_Request_Approvel_bot?startgroup=true")
-        ]]
         markup = InlineKeyboardMarkup(button)
         caption=f"**👋 HELLO username !\nYOUR JOINING 🎟 REQUEST FOR THE Channel Name IS APPROVED ☑️.\nTHANKS FOR JOINING**"
         img = random.choice(gif)
