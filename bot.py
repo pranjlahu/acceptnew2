@@ -142,7 +142,7 @@ async def approve(_, m : Message):
         add_group(m.chat.id)
         await app.approve_chat_join_request(op.id, kk.id)
         markup = InlineKeyboardMarkup(button)
-        caption=f"**👋 HELLO username !\nYOUR JOINING 🎟 REQUEST FOR THE Channel Name IS APPROVED ☑️.\nTHANKS FOR JOINING**"
+        caption=f"<b>**👋 HELLO {m.from_user.mention} !\nYOUR JOINING 🎟 REQUEST FOR THE <b>{m.chat.title}</b> IS APPROVED ☑️.\nTHANKS FOR JOINING**"
         img = random.choice(gif)
         await app.send_photo(
             m.from_user.id, 
