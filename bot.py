@@ -55,7 +55,6 @@ async def op(_, m :Message):
             keyboard = InlineKeyboardMarkup(
                 [
                         InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/Auto_Request_Approvel_bot?startgroup")
-                    ]
                 ]
             )
             add_user(m.from_user.id)
@@ -63,11 +62,9 @@ async def op(_, m :Message):
     
         elif m.chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
             keyboar = InlineKeyboardMarkup(
-                [
                     [
                         InlineKeyboardButton("💁‍♂️ Start me private 💁‍♂️", url="https://t.me/SDAutoApproveBot?start=start")
                     ]
-                ]
             )
             add_group(m.chat.id)
             await m.reply_text("**🦊 Hello {}!\nwrite me private for more details**".format(m.from_user.first_name), reply_markup=keyboar)
@@ -75,11 +72,9 @@ async def op(_, m :Message):
 
     except UserNotParticipant:
         key = InlineKeyboardMarkup(
-            [
                 [
                     InlineKeyboardButton("🍀 Check Again 🍀", "chk")
                 ]
-            ]
         )
         await m.reply_text("**⚠️Access Denied!⚠️\n\nPlease Join @{} to use me.If you joined click check again button to confirm.**".format(cfg.FSUB), reply_markup=key)
 
@@ -93,7 +88,6 @@ async def chk(_, cb : CallbackQuery):
             keyboard = InlineKeyboardMarkup(
                 [
                         InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/Auto_Request_Approvel_bot?startgroup")
-                    ]
                 ]
             )
             add_user(cb.from_user.id)
