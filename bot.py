@@ -18,10 +18,7 @@ app = Client(
 
 
 # Dm mode picture
-gif = [
-    'https://graph.org/file/2a8ff37310234bb666dee.jpg',
-    'https://graph.org/file/4d1c1981b6d8faa7238af.jpg',
-]
+gif = []
 
  
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Start ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -146,7 +143,7 @@ async def approve(_, m : Message):
             InlineKeyboardButton("Add To Group/Channel", url="t.me/Auto_Request_Approvel_bot?startgroup=true")
         ]]
         markup = InlineKeyboardMarkup(button)
-        caption=f"**Hello {m.from_user.mention}!\nYour Request To Join {m.chat.title} Was Approved\n\n**"
+        caption=f"**👋 HELLO username !\nYOUR JOINING 🎟 REQUEST FOR THE Channel Name IS APPROVED ☑️.\nTHANKS FOR JOINING**"
         img = random.choice(gif)
         await app.send_photo(
             m.from_user.id, 
