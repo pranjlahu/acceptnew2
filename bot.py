@@ -46,7 +46,7 @@ async def chk(_, cb : CallbackQuery):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Add To Group/Channel", url="http://t.me/{approvedbot.username}?startgroup=botstart")
+                        InlineKeyboardButton("Add To Group/Channel", url="http://t.me/{Auto_Request_Approvel_bot.username}?startgroup=botstart")
                     ]
                 ]
             )
