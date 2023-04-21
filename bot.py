@@ -32,7 +32,7 @@ async def op(_, m :Message):
     button=InlineKeyboardMarkup([[
        InlineKeyboardButton("Add To Group/Channel", url="t.me/Auto_Request_Approvel_bot?startgroup=true")
      ]])
-    await m.reply_photo("https://telegra.ph/file/38f34544ea576f9ab0c1b.jpg", text="**🦊 Hello {}!\nI'm an auto approve Admin Join Requests Bot.\nI can approve users in Groups/Channels.\nAdd me to your chat and promote me to admin with add members permission.**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=button)".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
+    await m.reply_text(text="**🦊 Hello {}!\nI'm an auto approve Admin Join Requests Bot.\nI can approve users in Groups/Channels.\nAdd me to your chat and promote me to admin with add members permission.**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=button)".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
     
     #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ callback ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
