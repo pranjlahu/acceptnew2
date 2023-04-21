@@ -153,33 +153,15 @@ async def approve(_, m : Message):
     try:
         add_group(m.chat.id)
         await app.approve_chat_join_request(op.id, kk.id)
-        button = [[
-            InlineKeyboardButton('🎥 NEW MOVIES', url='https://t.me/MR_LINK_Z')
-            ],[
-            InlineKeyboardButton('📽️ REQUEST', url='https://t.me/+FMrG-tLWyZM3ZTFk')
-        ]]
-        markup = InlineKeyboardMarkup(button)
-        caption=f"**Hello {m.from_user.mention}!\nYour Request To Join {m.chat.title} Was Approved\n\n_Powered By @MR_LINK_Z**"
         img = random.choice(gif)
-        await app.send_photo(
-            m.from_user.id, 
-            photo=img,
-            caption=caption, 
-            reply_markup=markup
-        )
+        await app.send_video(kk.id,img, "**Hello {}!\nWelcome To {}\n\n**".format(m.from_user.mention, m.chat.title))
         add_user(kk.id)
     except errors.PeerIdInvalid as e:
         print("user isn't start bot(means group)")
     except Exception as err:
-        print(str(err))    
-
-
- 
-
-
+        print(str(err)) 
             
 
-    
     
 print("I'm Alive Now!")
 app.run()
